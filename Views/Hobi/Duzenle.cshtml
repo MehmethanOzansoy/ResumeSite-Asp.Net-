@@ -1,0 +1,14 @@
+﻿@model MVCCv.Models.Entity.TblHobilerim
+@{
+    ViewBag.Title = "Duzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="text-center display-3">Duzenle</h2>
+<form method="post" class="col-md-6 border-1 form ">
+    @Html.Label("Eğitim Yeri İsmini Giriniz", new { @class = "form-label" })
+    @Html.TextBoxFor(x => x.Aciklama1, new { @class = "form-control" })
+    @Html.Label("Eğitim Bilgisi Kaynağını Giriniz", new { @class = "form-label" })
+    @Html.TextAreaFor(x => x.Aciklama2, new { @class = "form-control" })
+    <button class="btn btn-success mt-3">Onaylayın</button>
+</form>

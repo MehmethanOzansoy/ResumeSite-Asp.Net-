@@ -1,0 +1,18 @@
+﻿@using MVCCv.Models.Entity
+@model List<TblSertifikalarım>
+<div class="resume-section-content">
+    <h2 class="mb-5">Sertifikalar</h2>
+    <hr />
+    <ul class="list-group list-group-flush fa-ul mb-0">
+        @foreach (var i in Model)
+        {
+            <li class="list-group-item">
+                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                @i.Tarih <i class="fa-solid fa-arrow-right"></i>
+                @i.Aciklama
+
+            </li>
+        }
+
+    </ul>
+</div>

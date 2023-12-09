@@ -1,0 +1,25 @@
+﻿@model MVCCv.Models.Entity.TblSertifikalarım
+
+@{
+    ViewBag.Title = "SertifikaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<h2>Yetenek Güncelleme Sayfası</h2>
+<br />
+
+<form method="post">
+    <div class="form-group">
+        @Html.Label("Sertifika Tarihi", new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Sertifika Açıklaması", new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+        <br />
+
+    </div> 
+    <button class="btn btn-success">Güncelle</button>
+</form>

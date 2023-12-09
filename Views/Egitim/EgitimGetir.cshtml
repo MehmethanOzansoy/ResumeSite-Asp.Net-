@@ -1,0 +1,24 @@
+﻿@model MVCCv.Models.Entity.TblEgitimlerim
+@{
+    ViewBag.Title = "EgitimGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="dt-center mt-4">Eğitim Bilgilerini Güncelle</h2>
+
+<form method="post" class="col-md-6 border-1 form ">
+    @Html.Label("Eğitim Yeri İsmini Giriniz", new { @class = "form-label" })
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    @Html.Label("Eğitim Bilgisi Kaynağını Giriniz", new { @class = "form-label" })
+    @Html.TextBoxFor(x => x.Kaynak, new { @class = "form-control" })
+    @Html.Label("Eğitim bölüm bilgisini giriniz", new { @class = "form-label" })
+    @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
+    @Html.Label("Eğitim gördüğünüz okulun derecesi nedir ?", new { @class = "form-label" })
+    @Html.TextBoxFor(x => x.AltBaslik2, new { @class = "form-control" })
+    @Html.Label("Mezun olduğunuz tarihi giriniz", new { @class = "form-label" })
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    @Html.Label("Genel Ortalamanız Kaç", new { @class = "form-label" })
+    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+    <button class="btn btn-success mt-3">Onaylayın</button>
+</form>
+

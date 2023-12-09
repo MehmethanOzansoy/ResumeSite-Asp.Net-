@@ -1,0 +1,46 @@
+﻿@using MVCCv.Models.Entity
+@model List<TblHakkimda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<h5 class="text-center display-5 mt-4">Hakkımda Menüsü</h5>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <form method="post">
+                @foreach (var item in Model)
+                {
+                    <label class="form-label">İsim</label>
+                    <input type="text" class="form-control" name="Ad" value="@item.Ad" />
+                    <br />
+                    <label class="form-label">Soyad</label>
+                    <input type="text" class="form-control" name="Soyad" value="@item.Soyad" />
+                    <br />
+                    <label class="form-label">Adres</label>
+                    <input type="text" class="form-control" name="Adres" value="@item.Adres" />
+                    <br />
+                    <label class="form-label">Telefon</label>
+                    <input type="tel" class="form-control" name="Telefon" value="@item.Telefon" />
+                    <br />
+                    <label class="form-label">Mail</label>
+                    <input type="email" class="form-control" name="Mail" value="@item.Mail" />
+                    <br />
+                    <label for="formFile" class="form-label">Resim Yükle</label>
+                    <input class="form-control" type="file" name="Resim" id="formFile" value="@item.Resim">
+                    <br />
+                    <label class="form-label">Açiklama</label>
+                    <textarea rows="5" class="form-control" name="Aciklama">@item.Aciklama</textarea>
+                    <br />
+                }
+                <br />
+                <button class="btn btn-success">Güncelle</button>
+            </form>
+        </div>
+
+    </div>
+</div>

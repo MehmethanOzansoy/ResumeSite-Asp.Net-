@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="text-center display-3">Hobinizi Giriniz</h3>
+<div class="col-md-10 mt-2">
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Başlık</label>
+            <input type="text" class="form-control" aria-describedby="Title" name="Aciklama1">
+            <div id="title" class="form-text">Please enter this title</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Açıklama</label>
+            <input type="text" class="form-control" aria-describedby="Description" name="Aciklama2">
+            <div id="title" class="form-text">Please enter this description</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

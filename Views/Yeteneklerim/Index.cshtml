@@ -1,0 +1,85 @@
+﻿@using MVCCv.Models.Entity
+@model List<TblYeteneklerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{ 
+    string renk = "";
+
+}
+<h1 class="text-center display-2" >Yeteneklerim Sayfası</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Yetenek Listesi</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#ID</th>
+                    <th>Yetenek</th>
+                    <th>Derece</th>
+                    <th style="width: 40px">Oran</th>
+                    <th>Düzenle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    if(c.Oran<=50 && c.Oran>=0)
+                    {
+                        renk = "progress-bar bg-danger";
+                    }
+                    else if (c.Oran >= 51 && c.Oran <= 70)
+                    {
+                        renk = "progress-bar bg-info ";
+                    }
+                    else if (c.Oran >= 71 && c.Oran <= 84)
+                    {
+                        renk = "progress-bar bg-primary";
+                    }
+                    else if (c.Oran >= 85 && c.Oran <= 100)
+                    {
+                        renk = "progress-bar bg-success";
+                    }
+                    <tr>
+                        <td>@c.ID</td>
+                        <td>@c.Yetenek</td>
+                        <td>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar @renk" style="width: @c.Oran%"></div>
+                            </div>
+                        </td>
+                        <td><span class="badge bg-warning">@c.Oran%</span></td>
+                        <td>
+                            <a href="/Yeteneklerim/YetenekGüncelle/@c.ID" class="btn btn-info btn-sm" >
+                                <i class="fas fa-pencil-alt"></i>
+                                Düzenle
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Yeteneklerim/YetenekSil/@c.ID" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                                Sil
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+
+    </div>
+    <a href="/Yeteneklerim/YetenekEkle" class="btn btn-success mx-3 my-2">Yetenek Ekle</a>
+
+</div>
+
+<br />
+
+

@@ -1,0 +1,14 @@
+﻿@using MVCCv.Models.Entity
+@model List<TblHobilerim>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Hobiler</h2>
+
+    @foreach (var n in Model)
+    {
+        <h4>@n.Aciklama1</h4>
+        <br />
+        <p class="mb-4">* @n.Aciklama2</p>
+    }
+
+</div>

@@ -1,0 +1,20 @@
+﻿@using MVCCv.Models.Entity;
+@model List<TblEgitimlerim>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Eğitimler</h2>
+
+    @foreach (var a in Model)
+    {
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">@a.Baslik</h3>
+                <div class="subheading mb-3">@a.AltBaslik</div>
+                <div>@a.AltBaslik2</div>
+                <p>@a.GNO</p>
+            </div>
+            <div class="flex-shrink-0"><span class="text-primary">@a.Tarih</span></div>
+        </div>
+    }
+
+</div>

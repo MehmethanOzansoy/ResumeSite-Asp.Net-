@@ -1,0 +1,35 @@
+﻿@using MVCCv.Models.Entity
+@model List<TblHobilerim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card card-primary card-outline">
+    <div class="card-header">
+        <h3 class="text-center display-2">Hobiler</h3>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="card-body p-0">
+            <div class="mailbox-read-info">
+                <h4 class="display-6">@item.Aciklama1</h4>
+            </div>
+
+            <div class="mailbox-read-message">
+                <p>
+                    @item.Aciklama2
+                </p>
+            </div>
+
+        </div>
+        <div class="card-footer">
+            <a href="/Hobi/Duzenle/@item.ID" class="btn btn-default"><i class="fas fa-solid fa-pen-nib"></i> Düzenle</a>
+            <a href="/Hobi/Sil/@item.ID" class="btn btn-default"><i class="fas fa-solid fa-trash"></i> Sil</a>
+        </div>
+
+    }
+
+    <a href="/Hobi/Ekle/" class="btn btn-success mt-2">Ekle</a>
+</div>

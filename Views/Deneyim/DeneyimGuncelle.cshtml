@@ -1,0 +1,26 @@
+﻿@model MVCCv.Models.Entity.TblDeneyimlerim
+@{
+    ViewBag.Title = "DeneyimGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<h4>Deneyim Güncelleme Sayfası</h4>
+<br />
+<form class="form-group  my-5 mx-3" method="post">
+    @Html.Label("Deneyim ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control mb-2" })
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control mb-2" })
+    @Html.Label("Alt Başlık")
+    @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control mb-2" })
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control mb-2" })
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.Aciklama, new {@class = "form-control mb-2"})
+
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>
+

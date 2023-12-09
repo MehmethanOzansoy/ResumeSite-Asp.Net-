@@ -1,0 +1,58 @@
+﻿@model MVCCv.Models.Entity.TblEgitimlerim
+@{
+    ViewBag.Title = "EgitimEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card card-primary mt-4">
+    <div class="card-header">
+        <h3 class="card-title">Eğitim Bilgilerinizi Giriniz</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form method="post">
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="title">Okul Adını Giriniz</label>
+                    <input type="text" class="form-control" id="title" placeholder="Okul" name="Baslik" required>
+                   
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="source">Kaynak</label>
+                    <input type="text" class="form-control" id="source" placeholder="Kaynağı Giriniz" name="Kaynak">
+                    @Html.ValidationMessageFor(x=>x.Kaynak, "", new { @style = "color:red"})
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="subtitle">Alt Başlık</label>
+                    <input type="text" class="form-control" id="subtitle" placeholder="Alt Başlığı Giriniz" name="AltBaslik">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="subtitle1">Alt Başlık</label>
+                    <input type="text" class="form-control" id="subtitle1" placeholder="Alt Başlığı 2 Giriniz" name="AltBaslik1">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="mean">GNO</label>
+                    <input type="text" class="form-control" id="mean" placeholder="Genel Ortalamayı Giriniz" name="GNO">
+                    @Html.ValidationMessageFor(x => x.GNO, "", new { @style ="color:blue;"})
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="date">Tarih</label>
+                    <input type="text" class="form-control" id="date" placeholder="Tarihi Gİriniz" name="Tarih">
+                </div>
+            </div>
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Ekle</button>
+        </div>
+    </form>
+</div>
